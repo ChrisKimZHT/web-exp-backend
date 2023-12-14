@@ -17,6 +17,6 @@ public class Todo {
     private String detail;
     private Integer begin;
     private Integer end;
-    private Boolean isDeadline;
+    private Boolean isDeadLine;
     private Boolean isFinished;
 }
