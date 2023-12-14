@@ -2,7 +2,7 @@ package com.zouht.todolist.service.impl.note;
 
 import com.zouht.todolist.mapper.NoteMapper;
 import com.zouht.todolist.pojo.Note;
-import com.zouht.todolist.service.note.UpdateService;
+import com.zouht.todolist.service.note.NoteUpdateService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-public class UpdateServiceImpl implements UpdateService {
+public class NoteUpdateServiceImpl implements NoteUpdateService {
     @Resource
     NoteMapper noteMapper;
 

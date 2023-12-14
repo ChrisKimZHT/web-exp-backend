@@ -1,6 +1,6 @@
 package com.zouht.todolist.controller.todo;
 
-import com.zouht.todolist.service.note.GetService;
+import com.zouht.todolist.service.note.NoteGetService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,7 +11,7 @@ import java.util.Map;
 @RestController
 public class TodoGetController {
     @Resource
-    private GetService getService;
+    private NoteGetService getService;
 
     @GetMapping("/todo/get")
     public Map<String, Object> get(@RequestParam Integer id) {

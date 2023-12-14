@@ -2,6 +2,6 @@ package com.zouht.todolist.service.note;
 
 import java.util.Map;
 
-public interface DeleteService {
+public interface NoteDeleteService {
     Map<String, Object> delete(Integer id);
 }

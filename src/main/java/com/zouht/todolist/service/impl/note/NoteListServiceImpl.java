@@ -2,7 +2,7 @@ package com.zouht.todolist.service.impl.note;
 
 import com.zouht.todolist.mapper.NoteMapper;
 import com.zouht.todolist.pojo.Note;
-import com.zouht.todolist.service.note.ListService;
+import com.zouht.todolist.service.note.NoteListService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class ListServiceImpl implements ListService {
+public class NoteListServiceImpl implements NoteListService {
     @Resource
     NoteMapper noteMapper;
 
