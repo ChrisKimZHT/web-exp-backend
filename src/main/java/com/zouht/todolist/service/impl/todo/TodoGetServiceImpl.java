@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-public class TodoTodoGetServiceImpl implements TodoGetService {
+public class TodoGetServiceImpl implements TodoGetService {
     @Resource
     TodoMapper todoMapper;
 
