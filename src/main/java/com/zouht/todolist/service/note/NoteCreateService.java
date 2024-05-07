@@ -9,7 +9,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
 import java.util.Map;
 
 @Service
@@ -23,9 +22,6 @@ public class NoteCreateService {
         User user = loginUser.getUser();
         Note note = new Note(null, user.getUserId(), title, content, date, isStared);
         noteMapper.insert(note);
-        Map<String, Object> map = new HashMap<>();
-        map.put("status", 0);
-        map.put("message", "OK");
-        return map;
+        return Map.of("status", 0, "message", "OK");
     }
 }

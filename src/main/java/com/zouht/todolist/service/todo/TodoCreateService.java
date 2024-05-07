@@ -9,7 +9,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
 import java.util.Map;
 
 @Service
@@ -23,9 +22,6 @@ public class TodoCreateService {
         User user = loginUSer.getUser();
         Todo todo = new Todo(null, user.getUserId(), title, detail, begin, end, isDeadLine, isFinished);
         todoMapper.insert(todo);
-        Map<String, Object> map = new HashMap<>();
-        map.put("status", 0);
-        map.put("message", "OK");
-        return map;
+        return Map.of("status", 0, "message", "OK");
     }
 }

@@ -5,7 +5,6 @@ import com.zouht.todolist.pojo.Todo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
 import java.util.Map;
 
 @Service
@@ -15,10 +14,6 @@ public class TodoGetService {
 
     public Map<String, Object> get(Integer id) {
         Todo todo = todoMapper.selectById(id);
-        Map<String, Object> map = new HashMap<>();
-        map.put("status", 0);
-        map.put("message", "OK");
-        map.put("data", todo);
-        return map;
+        return Map.of("status", 0, "message", "OK", "data", todo);
     }
 }

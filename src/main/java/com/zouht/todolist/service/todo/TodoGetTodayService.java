@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.time.LocalDate;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -26,10 +25,6 @@ public class TodoGetTodayService {
         queryWrapper.or();
         queryWrapper.between("end", timestampLowerBound, timestampUpperBound);
         List<Todo> todoList = todoMapper.selectList(queryWrapper);
-        Map<String, Object> map = new HashMap<>();
-        map.put("status", 0);
-        map.put("message", "OK");
-        map.put("data", todoList);
-        return map;
+        return Map.of("status", 0, "message", "OK", "data", todoList);
     }
 }
