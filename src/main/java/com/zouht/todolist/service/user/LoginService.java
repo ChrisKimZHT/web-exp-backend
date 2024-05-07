@@ -23,6 +23,6 @@ public class LoginService {
         User user = loginUser.getUser();
         String jwt = JwtUtil.createJWT(user.getUserId().toString());
 
-        return Map.of("status", 0, "message", "OK", "token", jwt, "userId", user.getUserId());
+        return Map.of("status", 0, "message", "OK", "token", jwt, "userId", user.getUserId(), "avatar", user.getAvatarFileName());
     }
 }
