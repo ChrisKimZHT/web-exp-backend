@@ -1,6 +1,6 @@
-package com.zouht.todolist.controller.auth;
+package com.zouht.todolist.controller.user;
 
-import com.zouht.todolist.service.auth.CheckService;
+import com.zouht.todolist.service.user.CheckService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,7 +12,7 @@ public class CheckController {
     @Resource
     CheckService checkService;
 
-    @PostMapping("/auth/check")
+    @PostMapping("/user/check")
     public Map<String, Object> check() {
         return checkService.check();
     }

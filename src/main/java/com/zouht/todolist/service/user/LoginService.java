@@ -1,7 +1,6 @@
-package com.zouht.todolist.service.auth;
+package com.zouht.todolist.service.user;
 
 import com.zouht.todolist.pojo.User;
-import com.zouht.todolist.service.userDetail.UserDetailImpl;
 import com.zouht.todolist.util.JwtUtil;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

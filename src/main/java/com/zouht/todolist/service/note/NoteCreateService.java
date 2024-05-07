@@ -3,7 +3,7 @@ package com.zouht.todolist.service.note;
 import com.zouht.todolist.mapper.NoteMapper;
 import com.zouht.todolist.pojo.Note;
 import com.zouht.todolist.pojo.User;
-import com.zouht.todolist.service.userDetail.UserDetailImpl;
+import com.zouht.todolist.service.user.UserDetailImpl;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;

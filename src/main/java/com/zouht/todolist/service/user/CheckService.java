@@ -1,12 +1,10 @@
-package com.zouht.todolist.service.auth;
+package com.zouht.todolist.service.user;
 
 import com.zouht.todolist.pojo.User;
-import com.zouht.todolist.service.userDetail.UserDetailImpl;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.Map;
 
 @Service

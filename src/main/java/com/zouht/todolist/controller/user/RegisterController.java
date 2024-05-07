@@ -1,6 +1,6 @@
-package com.zouht.todolist.controller.auth;
+package com.zouht.todolist.controller.user;
 
-import com.zouht.todolist.service.auth.RegisterService;
+import com.zouht.todolist.service.user.RegisterService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +13,7 @@ public class RegisterController {
     @Resource
     private RegisterService registerService;
 
-    @PostMapping("/auth/register")
+    @PostMapping("/user/register")
     public Map<String, Object> register(@RequestBody Map<String, Object> map) {
         String email = (String) map.get("email");
         String password = (String) map.get("password");
