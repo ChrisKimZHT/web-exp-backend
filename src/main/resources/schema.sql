@@ -1,29 +1,29 @@
 CREATE TABLE user
 (
-    id             INT PRIMARY KEY AUTO_INCREMENT,
-    email          VARCHAR(255) NOT NULL,
-    hashedPassword VARCHAR(255) NOT NULL,
-    avatarFileName VARCHAR(255)
+    user_id          INT PRIMARY KEY AUTO_INCREMENT,
+    email            VARCHAR(255) NOT NULL,
+    hashed_password  VARCHAR(255) NOT NULL,
+    avatar_file_name VARCHAR(255)
 );
 
 CREATE TABLE note
 (
-    noteId   INT PRIMARY KEY AUTO_INCREMENT,
-    userId   INT          NOT NULL,
-    title    VARCHAR(255) NOT NULL,
-    content  TEXT,
-    date     TIMESTAMP,
-    isStared BOOLEAN
+    note_id   INT PRIMARY KEY AUTO_INCREMENT,
+    user_id   INT          NOT NULL,
+    title     VARCHAR(255) NOT NULL,
+    content   TEXT,
+    date      TIMESTAMP,
+    is_stared BOOLEAN
 );
 
 CREATE TABLE todo
 (
-    todoId     INT PRIMARY KEY AUTO_INCREMENT,
-    userId     INT          NOT NULL,
-    title      VARCHAR(255) NOT NULL,
-    detail     TEXT,
-    beginDate  TIMESTAMP,
-    endDate    TIMESTAMP,
-    isDeadline BOOLEAN,
-    isFinished BOOLEAN
+    todo_id     INT PRIMARY KEY AUTO_INCREMENT,
+    user_id     INT          NOT NULL,
+    title       VARCHAR(255) NOT NULL,
+    detail      TEXT,
+    begin_date  TIMESTAMP,
+    end_date    TIMESTAMP,
+    is_deadline BOOLEAN,
+    is_finished BOOLEAN
 );
