@@ -1,4 +1,4 @@
-package com.zouht.todolist.serviceImpl.util;
+package com.zouht.todolist.service.userDetail;
 
 import com.zouht.todolist.pojo.User;
 import lombok.AllArgsConstructor;

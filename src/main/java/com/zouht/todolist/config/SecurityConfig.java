@@ -1,6 +1,5 @@
 package com.zouht.todolist.config;
 
-import com.zouht.todolist.config.filter.JwtAuthenticationTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
