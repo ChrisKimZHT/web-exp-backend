@@ -15,8 +15,9 @@ public class RegisterController {
 
     @PostMapping("/auth/register")
     public Map<String, Object> register(@RequestBody Map<String, Object> map) {
-        String username = (String) map.get("username");
+        String email = (String) map.get("email");
         String password = (String) map.get("password");
-        return registerService.register(username, password);
+        String avatar = (String) map.get("avatar");
+        return registerService.register(email, password, avatar);
     }
 }

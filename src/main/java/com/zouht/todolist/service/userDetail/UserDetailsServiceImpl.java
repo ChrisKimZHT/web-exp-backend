@@ -17,10 +17,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private UserMapper userMapper;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("username", username);
+        queryWrapper.eq("email", email);
+
         User user = userMapper.selectOne(queryWrapper);
+
         if (user == null) {
             throw new RuntimeException("UserNotFound");
         }

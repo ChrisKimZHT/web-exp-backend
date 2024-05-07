@@ -9,7 +9,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
 import java.util.Map;
 
 @Service
@@ -21,13 +20,10 @@ public class LoginService {
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
         Authentication authenticate = authenticationManager.authenticate(authenticationToken);
         UserDetailImpl loginUser = (UserDetailImpl) authenticate.getPrincipal();
+
         User user = loginUser.getUser();
-        String jwt = JwtUtil.createJWT(user.getId().toString());
-        Map<String, Object> map = new HashMap<>();
-        map.put("status", 0);
-        map.put("message", "OK");
-        map.put("token", jwt);
-        map.put("uid", user.getId());
-        return map;
+        String jwt = JwtUtil.createJWT(user.getUserId().toString());
+
+        return Map.of("status", 0, "message", "OK", "token", jwt, "userId", user.getUserId());
     }
 }

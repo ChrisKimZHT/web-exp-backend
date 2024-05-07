@@ -15,8 +15,8 @@ public class LoginController {
 
     @PostMapping("/auth/login")
     public Map<String, Object> login(@RequestBody Map<String, Object> map) {
-        String username = (String) map.get("username");
+        String email = (String) map.get("email");
         String password = (String) map.get("password");
-        return loginService.login(username, password);
+        return loginService.login(email, password);
     }
 }

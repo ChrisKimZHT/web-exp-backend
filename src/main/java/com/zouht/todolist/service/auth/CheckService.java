@@ -15,10 +15,6 @@ public class CheckService {
         UsernamePasswordAuthenticationToken authenticationToken = (UsernamePasswordAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
         UserDetailImpl loginUser = (UserDetailImpl) authenticationToken.getPrincipal();
         User user = loginUser.getUser();
-        Map<String, Object> map = new HashMap<>();
-        map.put("status", 0);
-        map.put("message", "OK");
-        map.put("uid", user.getId());
-        return map;
+        return Map.of("status", 0, "message", "OK", "userId", user.getUserId());
     }
 }

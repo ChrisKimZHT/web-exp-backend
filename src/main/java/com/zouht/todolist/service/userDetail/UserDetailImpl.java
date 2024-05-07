@@ -22,13 +22,11 @@ public class UserDetailImpl implements UserDetails {
 
     @Override
     public String getPassword() {
-        return user.getPassword();
+        return user.getHashedPassword();
     }
 
     @Override
-    public String getUsername() {
-        return user.getUsername();
-    }
+    public String getUsername() { return user.getEmail(); }
 
     @Override
     public boolean isAccountNonExpired() {

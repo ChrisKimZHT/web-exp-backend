@@ -21,7 +21,7 @@ public class NoteCreateService {
         UsernamePasswordAuthenticationToken authenticationToken = (UsernamePasswordAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
         UserDetailImpl loginUser = (UserDetailImpl) authenticationToken.getPrincipal();
         User user = loginUser.getUser();
-        Note note = new Note(null, user.getId(), title, content, date, isStared);
+        Note note = new Note(null, user.getUserId(), title, content, date, isStared);
         noteMapper.insert(note);
         Map<String, Object> map = new HashMap<>();
         map.put("status", 0);
