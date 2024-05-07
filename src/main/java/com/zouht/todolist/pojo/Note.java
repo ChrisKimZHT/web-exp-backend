@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Note {
     @TableId(type = IdType.AUTO)
-    private Integer id;
+    private Integer noteId;
     private Integer userId;
     private String title;
     private String content;
