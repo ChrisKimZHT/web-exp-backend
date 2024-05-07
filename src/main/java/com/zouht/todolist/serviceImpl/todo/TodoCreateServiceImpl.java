@@ -1,9 +1,9 @@
-package com.zouht.todolist.service.impl.todo;
+package com.zouht.todolist.serviceImpl.todo;
 
 import com.zouht.todolist.mapper.TodoMapper;
 import com.zouht.todolist.pojo.Todo;
 import com.zouht.todolist.pojo.User;
-import com.zouht.todolist.service.impl.util.UserDetailImpl;
+import com.zouht.todolist.serviceImpl.util.UserDetailImpl;
 import com.zouht.todolist.service.todo.TodoCreateService;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;

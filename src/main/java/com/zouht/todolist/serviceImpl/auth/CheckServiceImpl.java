@@ -1,8 +1,8 @@
-package com.zouht.todolist.service.impl.auth;
+package com.zouht.todolist.serviceImpl.auth;
 
 import com.zouht.todolist.pojo.User;
 import com.zouht.todolist.service.auth.CheckService;
-import com.zouht.todolist.service.impl.util.UserDetailImpl;
+import com.zouht.todolist.serviceImpl.util.UserDetailImpl;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.zouht.todolist.service.impl.auth;
+package com.zouht.todolist.serviceImpl.auth;
 
 import com.zouht.todolist.mapper.UserMapper;
 import com.zouht.todolist.pojo.User;

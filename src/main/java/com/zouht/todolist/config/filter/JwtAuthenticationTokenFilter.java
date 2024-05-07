@@ -2,7 +2,7 @@ package com.zouht.todolist.config.filter;
 
 import com.zouht.todolist.mapper.UserMapper;
 import com.zouht.todolist.pojo.User;
-import com.zouht.todolist.service.impl.util.UserDetailImpl;
+import com.zouht.todolist.serviceImpl.util.UserDetailImpl;
 import com.zouht.todolist.util.JwtUtil;
 import io.jsonwebtoken.Claims;
 import org.jetbrains.annotations.NotNull;

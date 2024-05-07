@@ -1,4 +1,4 @@
-package com.zouht.todolist.service.impl.todo;
+package com.zouht.todolist.serviceImpl.todo;
 
 import com.zouht.todolist.mapper.TodoMapper;
 import com.zouht.todolist.pojo.Todo;

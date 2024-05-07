@@ -1,4 +1,4 @@
-package com.zouht.todolist.service.impl.todo;
+package com.zouht.todolist.serviceImpl.todo;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.zouht.todolist.mapper.TodoMapper;

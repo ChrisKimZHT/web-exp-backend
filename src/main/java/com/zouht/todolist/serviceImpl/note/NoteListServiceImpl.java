@@ -1,26 +1,27 @@
-package com.zouht.todolist.service.impl.note;
+package com.zouht.todolist.serviceImpl.note;
 
 import com.zouht.todolist.mapper.NoteMapper;
 import com.zouht.todolist.pojo.Note;
-import com.zouht.todolist.service.note.NoteGetService;
+import com.zouht.todolist.service.note.NoteListService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
-public class NoteGetServiceImpl implements NoteGetService {
+public class NoteListServiceImpl implements NoteListService {
     @Resource
     NoteMapper noteMapper;
 
     @Override
-    public Map<String, Object> get(Integer id) {
-        Note note = noteMapper.selectById(id);
+    public Map<String, Object> list() {
+        List<Note> noteList = noteMapper.selectList(null);
         Map<String, Object> map = new HashMap<>();
         map.put("status", 0);
         map.put("message", "OK");
-        map.put("data", note);
+        map.put("data", noteList);
         return map;
     }
 }
