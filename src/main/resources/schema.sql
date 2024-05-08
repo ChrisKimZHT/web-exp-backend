@@ -12,7 +12,7 @@ CREATE TABLE note
     user_id   INT          NOT NULL,
     title     VARCHAR(255) NOT NULL,
     content   TEXT,
-    date      TIMESTAMP,
+    date      INT,
     is_stared BOOLEAN
 );
 
@@ -22,8 +22,8 @@ CREATE TABLE todo
     user_id     INT          NOT NULL,
     title       VARCHAR(255) NOT NULL,
     detail      TEXT,
-    begin_date  TIMESTAMP,
-    end_date    TIMESTAMP,
+    begin_date  INT,
+    end_date    INT,
     is_deadline BOOLEAN,
     is_finished BOOLEAN
 );
