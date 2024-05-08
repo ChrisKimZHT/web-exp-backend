@@ -21,7 +21,7 @@ public class NoteCreateController {
 
         if (title == null || content == null) {
             response.setStatus(400);
-            return Map.of("error", "Bad Request");
+            return Map.of("status", 1, "message", "title or content is null");
         }
 
         try {
