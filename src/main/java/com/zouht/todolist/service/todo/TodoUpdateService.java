@@ -12,13 +12,12 @@ public class TodoUpdateService {
     @Resource
     TodoMapper todoMapper;
 
-    public Map<String, Object> update(Integer todoId, String title, String detail, Integer begin, Integer end, Boolean isDeadLine, Boolean isFinished) {
+    public Map<String, Object> update(Integer todoId, String title, String detail, Integer begin, Integer end, Boolean isFinished) {
         Todo todo = todoMapper.selectById(todoId);
         todo.setTitle(title);
         todo.setDetail(detail);
         todo.setBegin(begin);
         todo.setEnd(end);
-        todo.setIsDeadLine(isDeadLine);
         todo.setIsFinished(isFinished);
         todoMapper.updateById(todo);
         return Map.of("status", 0, "message", "OK");

@@ -20,11 +20,10 @@ public class TodoCreateController {
         String detail = (String) map.get("detail");
         Integer begin = (Integer) map.get("begin");
         Integer end = (Integer) map.get("end");
-        Boolean isDeadline = (Boolean) map.get("isDeadLine");
         Boolean isFinished = (Boolean) map.get("isFinished");
 
         try {
-            return todoCreateService.create(title, detail, begin, end, isDeadline, isFinished);
+            return todoCreateService.create(title, detail, begin, end, isFinished);
         } catch (Exception e) {
             response.setStatus(500);
             return Map.of("status", 1, "message", e.getMessage());

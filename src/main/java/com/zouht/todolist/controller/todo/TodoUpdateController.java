@@ -21,7 +21,6 @@ public class TodoUpdateController {
         String detail = (String) map.get("detail");
         Integer begin = (Integer) map.get("begin");
         Integer end = (Integer) map.get("end");
-        Boolean isDeadline = (Boolean) map.get("isDeadLine");
         Boolean isFinished = (Boolean) map.get("isFinished");
 
         if (todoId == null) {
@@ -30,7 +29,7 @@ public class TodoUpdateController {
         }
 
         try {
-            return todoUpdateService.update(todoId, title, detail, begin, end, isDeadline, isFinished);
+            return todoUpdateService.update(todoId, title, detail, begin, end, isFinished);
         } catch (Exception e) {
             response.setStatus(500);
             return Map.of("status", 1, "message", e.getMessage());
