@@ -24,6 +24,6 @@ public class TodoCreateService {
         Todo todo = new Todo(null, user.getUserId(), title, detail, begin, end, isFinished);
         todoMapper.insert(todo);
 
-        return Map.of("status", 0, "message", "OK");
+        return Map.of("status", 0, "message", "OK", "todoId", todo.getTodoId());
     }
 }
