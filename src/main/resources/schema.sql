@@ -22,8 +22,7 @@ CREATE TABLE todo
     user_id     INT          NOT NULL,
     title       VARCHAR(255) NOT NULL,
     detail      TEXT,
-    begin_date  INT,
-    end_date    INT,
-    is_deadline BOOLEAN,
+    begin       INT,
+    end         INT,
     is_finished BOOLEAN
 );
