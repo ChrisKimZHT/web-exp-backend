@@ -15,13 +15,13 @@ public class NoteDeleteController {
     NoteDeleteService noteDeleteService;
 
     @DeleteMapping("/note/delete")
-    public Map<String, Object> delete(@RequestParam Integer id) {
-        if (id == null) {
+    public Map<String, Object> delete(@RequestParam Integer noteId) {
+        if (noteId == null) {
             return Map.of("status", 1, "message", "id is null");
         }
 
         try {
-            return noteDeleteService.delete(id);
+            return noteDeleteService.delete(noteId);
         } catch (Exception e) {
             return Map.of("status", 1, "message", e.getMessage());
         }

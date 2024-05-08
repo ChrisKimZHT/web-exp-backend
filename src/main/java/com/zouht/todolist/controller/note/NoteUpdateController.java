@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 @RestController
@@ -14,14 +15,24 @@ public class NoteUpdateController {
     NoteUpdateService noteUpdateService;
 
     @PostMapping("/note/update")
-    public Map<String, Object> update(@RequestBody Map<String, Object> map) {
-        Map<String, Object> data = (Map<String, Object>) map.get("data");
-        Integer id = (Integer) data.get("id");
-        String title = (String) data.get("title");
-        String content = (String) data.get("content");
-        Integer date = (Integer) data.get("date");
-        Boolean isStared = (Boolean) data.get("isStared");
-        return noteUpdateService.update(id, title, content, date, isStared);
+    public Map<String, Object> update(@RequestBody Map<String, Object> map, HttpServletResponse response) {
+        Integer noteId = (Integer) map.get("noteId");
+        String title = (String) map.get("title");
+        String content = (String) map.get("content");
+        Integer date = (Integer) map.get("date");
+        Boolean isStared = (Boolean) map.get("isStared");
+
+        if (noteId == null || title == null || content == null || date == null || isStared == null) {
+            response.setStatus(400);
+            return Map.of("status", 1, "message", "Invalid parameters");
+        }
+
+        try {
+            return noteUpdateService.update(noteId, title, content, date, isStared);
+        } catch (Exception e) {
+            response.setStatus(500);
+            return Map.of("status", 1, "message", e.getMessage());
+        }
     }
 
 }

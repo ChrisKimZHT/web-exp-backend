@@ -12,8 +12,8 @@ public class NoteUpdateService {
     @Resource
     NoteMapper noteMapper;
 
-    public Map<String, Object> update(Integer id, String title, String content, Integer date, Boolean isStared) {
-        Note note = noteMapper.selectById(id);
+    public Map<String, Object> update(Integer noteId, String title, String content, Integer date, Boolean isStared) {
+        Note note = noteMapper.selectById(noteId);
         note.setTitle(title);
         note.setContent(content);
         note.setDate(date);

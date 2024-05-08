@@ -12,8 +12,8 @@ public class NoteGetService {
     @Resource
     NoteMapper noteMapper;
 
-    public Map<String, Object> get(Integer id) {
-        Note note = noteMapper.selectById(id);
+    public Map<String, Object> get(Integer noteId) {
+        Note note = noteMapper.selectById(noteId);
         return Map.of("status", 0, "message", "OK", "data", note);
     }
 }

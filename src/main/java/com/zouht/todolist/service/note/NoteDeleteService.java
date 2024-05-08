@@ -11,8 +11,8 @@ public class NoteDeleteService {
     @Resource
     NoteMapper noteMapper;
 
-    public Map<String, Object> delete(Integer id) {
-        noteMapper.deleteById(id);
+    public Map<String, Object> delete(Integer noteId) {
+        noteMapper.deleteById(noteId);
         return Map.of("status", 0, "message", "OK");
     }
 }

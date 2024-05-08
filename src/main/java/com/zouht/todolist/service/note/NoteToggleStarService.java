@@ -12,8 +12,8 @@ public class NoteToggleStarService {
     @Resource
     NoteMapper noteMapper;
 
-    public Map<String, Object> toggleStar(Integer id) {
-        Note note = noteMapper.selectById(id);
+    public Map<String, Object> toggleStar(Integer noteId) {
+        Note note = noteMapper.selectById(noteId);
         note.setIsStared(!note.getIsStared());
         noteMapper.updateById(note);
         return Map.of("status", 0, "message", "OK");
