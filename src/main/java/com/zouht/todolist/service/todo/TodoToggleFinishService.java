@@ -13,6 +13,7 @@ public class TodoToggleFinishService {
     TodoMapper todoMapper;
 
     public Map<String, Object> toggleFinish(Integer todoId) {
+        // TODO: 没判平行越权
         Todo todo = todoMapper.selectById(todoId);
         todo.setIsFinished(!todo.getIsFinished());
         todoMapper.updateById(todo);

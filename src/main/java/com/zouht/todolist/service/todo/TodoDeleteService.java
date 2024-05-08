@@ -12,6 +12,7 @@ public class TodoDeleteService {
     TodoMapper todoMapper;
 
     public Map<String, Object> delete(Integer todoId) {
+        // TODO: 没判平行越权
         todoMapper.deleteById(todoId);
         return Map.of("status", 0, "message", "OK");
     }

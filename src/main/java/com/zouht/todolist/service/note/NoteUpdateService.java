@@ -13,6 +13,7 @@ public class NoteUpdateService {
     NoteMapper noteMapper;
 
     public Map<String, Object> update(Integer noteId, String title, String content, Integer date, Boolean isStared) {
+        // TODO: 没判平行越权
         Note note = noteMapper.selectById(noteId);
         note.setTitle(title);
         note.setContent(content);

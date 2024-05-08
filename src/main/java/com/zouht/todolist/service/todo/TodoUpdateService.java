@@ -13,6 +13,7 @@ public class TodoUpdateService {
     TodoMapper todoMapper;
 
     public Map<String, Object> update(Integer todoId, String title, String detail, Integer begin, Integer end, Boolean isFinished) {
+        // TODO: 没判平行越权
         Todo todo = todoMapper.selectById(todoId);
         todo.setTitle(title);
         todo.setDetail(detail);

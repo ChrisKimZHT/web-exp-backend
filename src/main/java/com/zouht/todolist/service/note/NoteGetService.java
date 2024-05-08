@@ -13,6 +13,7 @@ public class NoteGetService {
     NoteMapper noteMapper;
 
     public Map<String, Object> get(Integer noteId) {
+        // TODO: 没判平行越权
         Note note = noteMapper.selectById(noteId);
         return Map.of("status", 0, "message", "OK", "data", note);
     }

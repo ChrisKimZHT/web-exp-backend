@@ -16,6 +16,7 @@ public class TodoGetTodayService {
     TodoMapper todoMapper;
 
     public Map<String, Object> getToday(Integer year, Integer month, Integer day) {
+        // TODO: 没判平行越权
         LocalDate dateLowerBound, dateUpperBound;
         if (day != null) {
             dateLowerBound = LocalDate.of(year, month, day);

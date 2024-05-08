@@ -12,6 +12,7 @@ public class NoteDeleteService {
     NoteMapper noteMapper;
 
     public Map<String, Object> delete(Integer noteId) {
+        // TODO: 没判平行越权
         noteMapper.deleteById(noteId);
         return Map.of("status", 0, "message", "OK");
     }

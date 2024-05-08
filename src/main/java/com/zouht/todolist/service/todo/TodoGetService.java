@@ -13,6 +13,7 @@ public class TodoGetService {
     TodoMapper todoMapper;
 
     public Map<String, Object> get(Integer todoId) {
+        // TODO: 没判平行越权
         Todo todo = todoMapper.selectById(todoId);
         return Map.of("status", 0, "message", "OK", "data", todo);
     }

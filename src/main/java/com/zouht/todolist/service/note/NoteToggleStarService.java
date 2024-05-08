@@ -13,6 +13,7 @@ public class NoteToggleStarService {
     NoteMapper noteMapper;
 
     public Map<String, Object> toggleStar(Integer noteId) {
+        // TODO: 没判平行越权
         Note note = noteMapper.selectById(noteId);
         note.setIsStared(!note.getIsStared());
         noteMapper.updateById(note);
