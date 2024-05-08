@@ -12,8 +12,8 @@ public class TodoToggleFinishService {
     @Resource
     TodoMapper todoMapper;
 
-    public Map<String, Object> toggleFinish(Integer id) {
-        Todo todo = todoMapper.selectById(id);
+    public Map<String, Object> toggleFinish(Integer todoId) {
+        Todo todo = todoMapper.selectById(todoId);
         todo.setIsFinished(!todo.getIsFinished());
         todoMapper.updateById(todo);
         return Map.of("status", 0, "message", "OK");

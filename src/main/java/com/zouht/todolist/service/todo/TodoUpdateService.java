@@ -12,8 +12,8 @@ public class TodoUpdateService {
     @Resource
     TodoMapper todoMapper;
 
-    public Map<String, Object> update(Integer id, String title, String detail, Integer begin, Integer end, Boolean isDeadLine, Boolean isFinished) {
-        Todo todo = todoMapper.selectById(id);
+    public Map<String, Object> update(Integer todoId, String title, String detail, Integer begin, Integer end, Boolean isDeadLine, Boolean isFinished) {
+        Todo todo = todoMapper.selectById(todoId);
         todo.setTitle(title);
         todo.setDetail(detail);
         todo.setBegin(begin);

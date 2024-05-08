@@ -11,8 +11,8 @@ public class TodoDeleteService {
     @Resource
     TodoMapper todoMapper;
 
-    public Map<String, Object> delete(Integer id) {
-        todoMapper.deleteById(id);
+    public Map<String, Object> delete(Integer todoId) {
+        todoMapper.deleteById(todoId);
         return Map.of("status", 0, "message", "OK");
     }
 }

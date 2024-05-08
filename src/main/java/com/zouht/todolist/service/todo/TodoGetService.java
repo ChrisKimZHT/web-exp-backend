@@ -12,8 +12,8 @@ public class TodoGetService {
     @Resource
     TodoMapper todoMapper;
 
-    public Map<String, Object> get(Integer id) {
-        Todo todo = todoMapper.selectById(id);
+    public Map<String, Object> get(Integer todoId) {
+        Todo todo = todoMapper.selectById(todoId);
         return Map.of("status", 0, "message", "OK", "data", todo);
     }
 }

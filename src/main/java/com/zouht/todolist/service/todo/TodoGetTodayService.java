@@ -16,8 +16,14 @@ public class TodoGetTodayService {
     TodoMapper todoMapper;
 
     public Map<String, Object> getToday(Integer year, Integer month, Integer day) {
-        LocalDate dateLowerBound = LocalDate.of(year, month, day);
-        LocalDate dateUpperBound = dateLowerBound.plusDays(1);
+        LocalDate dateLowerBound, dateUpperBound;
+        if (day != null) {
+            dateLowerBound = LocalDate.of(year, month, day);
+            dateUpperBound = dateLowerBound.plusDays(1);
+        } else {
+            dateLowerBound = LocalDate.of(year, month, 1);
+            dateUpperBound = dateLowerBound.plusMonths(1);
+        }
         Integer timestampLowerBound = (int) dateLowerBound.toEpochDay() * 24 * 60 * 60;
         Integer timestampUpperBound = (int) dateUpperBound.toEpochDay() * 24 * 60 * 60;
         QueryWrapper<Todo> queryWrapper = new QueryWrapper<>();

@@ -16,12 +16,14 @@ public class TodoCreateService {
     @Resource
     TodoMapper todoMapper;
 
-    public Map<String, Object> create(Integer id, String title, String detail, Integer begin, Integer end, Boolean isDeadLine, Boolean isFinished) {
+    public Map<String, Object> create(String title, String detail, Integer begin, Integer end, Boolean isDeadLine, Boolean isFinished) {
         UsernamePasswordAuthenticationToken authenticationToken = (UsernamePasswordAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
         UserDetailImpl loginUSer = (UserDetailImpl) authenticationToken.getPrincipal();
         User user = loginUSer.getUser();
+
         Todo todo = new Todo(null, user.getUserId(), title, detail, begin, end, isDeadLine, isFinished);
         todoMapper.insert(todo);
+
         return Map.of("status", 0, "message", "OK");
     }
 }
